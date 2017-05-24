@@ -1,0 +1,7 @@
+C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\BackEnd\bin\Debug\netstandard1.6\BackEnd.deps.json
+C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\BackEnd\bin\Debug\netstandard1.6\BackEnd.dll
+C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\BackEnd\bin\Debug\netstandard1.6\BackEnd.pdb
+C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\BackEnd\obj\Debug\netstandard1.6\BackEnd.csprojResolveAssemblyReference.cache
+C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\BackEnd\obj\Debug\netstandard1.6\BackEnd.AssemblyInfo.cs
+C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\BackEnd\obj\Debug\netstandard1.6\BackEnd.dll
+C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\BackEnd\obj\Debug\netstandard1.6\BackEnd.pdb

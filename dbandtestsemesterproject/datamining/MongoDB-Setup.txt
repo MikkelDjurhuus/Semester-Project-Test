@@ -1,0 +1,2 @@
+mongoimport -d Guttenberg -c Book --type csv --file C:\Users\Theko\OneDrive\Dokumenter\GitHub\datamining\book.csv --headerline
+mongoimport -d Guttenberg -c City --type csv --file C:\Users\Theko\OneDrive\Dokumenter\GitHub\datamining\cities15000.csv --headerline

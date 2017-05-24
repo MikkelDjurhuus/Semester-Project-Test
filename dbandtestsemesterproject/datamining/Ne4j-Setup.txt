@@ -1,0 +1,22 @@
+CREATE CONSTRAINT ON (book:Book) ASSERT book.id IS UNIQUE
+CREATE CONSTRAINT ON (city:City) ASSERT city.id IS UNIQUE
+
+LOAD CSV WITH HEADERS FROM "file:///cities15000.csv" AS row
+MERGE (:City {id: toInt(row.id), name: row.name, latitude: row.latitude, longitude: row.longitude});
+
+LOAD CSV WITH HEADERS FROM "file:///books-nocities.csv" AS row
+MERGE (:Book {id: toInt(row.id), title: row.title, author: row.author});
+
+LOAD CSV WITH HEADERS FROM "file:///mentioned.csv" AS row
+Match (b:Book {id: row.book_id})
+Match (c:City {id: row.city_id})
+Merge (b)-[r:mentions]->(c)
+ON CREATE SET r.count = 1
+ON MATCH SET r.count = r.count + 1
+
+match (c:City),(city:City {name:"Weilheim"})
+with point({longitude: city.longitude, latitude: city.latitude}) as d,
+point({longitude: c.longitude, latitude: c.latitude}) as d1, c
+with toInt(distance(d,d1)/1000) as distance, c
+where  distance < 500000
+return distinct distance, c.name order by distance

@@ -1,0 +1,259 @@
+﻿<br />
+<br />
+
+<div id="dbDropDownDiv"></div>
+
+<br />
+<br />
+
+<span>
+    <div id="cityNameText" style="width:150px; float:left; margin-right:10px;"></div>
+    <div id="searchCityNamesButton" style="width:150px; float:left;"></div>
+</span>
+<br />
+<br />
+<span>
+    <div id="authorText" style="width:150px; float:left; margin-right:10px;"></div>
+    <div id="searchAuthorButton" style="width:150px; float:left;"></div>
+</span>
+<br />
+<br />
+<span>
+    <div id="bookTitleText" style="width:150px;float:left; margin-right:10px;"></div>
+    <div id="searchBookTitleButton" style="width:150px; float:left;"></div>
+</span>
+<br />
+<br />
+<span>
+    <div id="lonGeoLocText" style="width:150px;float:left; margin-right:10px;"></div>
+    <div id="latGeoLocText" style="width:150px;float:left; margin-right:10px;"></div>
+    <div id="searchGeoLocationButton" style="width:150px; float:left;"></div>
+</span>
+<br />
+<br />
+<span>
+    <div id="gridContainer" style="width:50%; float:left"></div>
+    <div id="map" style="width:50%; float:left;"></div>
+</span>
+
+<span>
+    <div id="gridContainer" style="width:50%; float:left"></div>
+    <div id="map" style="width:50%; float:left;"></div>
+</span>
+
+<script>
+
+    var chooseDbDropDown = $("#dbDropDownDiv").dxSelectBox({
+        displayExpr: "displayName",
+        valueExpr: "id",
+        placeholder: "Choose Database"
+    }).dxSelectBox("instance");
+
+    var mapWidget = $('#map').dxMap({
+        zoom: 11,
+        height: 440,
+        width: "49%",
+        controls: true,
+    }).dxMap("instance");
+
+    var dataGrid = $("#gridContainer").dxDataGrid({
+        columns: [{
+            dataField: 'id',
+            caption: 'ID',
+            width: 70
+        },
+        {
+            dataField: "name"
+        },
+        {
+            dataField: "author"
+        },
+        {
+            dataField: "longtitude"
+        },
+        {
+            dataField: "latitude"
+        }]
+    })
+
+    $("#searchCityNamesButton").dxButton({
+        text: "Search By City Name",
+        type: "success",
+        onClick: function (data) {
+
+            var _dbType = chooseDbDropDown.option("value");
+            var _city = cityNameText.option("value");
+
+            if (_city == "") {
+                DevExpress.ui.notify("City Name Is Required", "error", 2000);
+            }
+            else if (_dbType == null) {
+                DevExpress.ui.notify("Database type has to be chosen", "error", 2000);
+            }
+            else {
+                LoadBooksFromCity();
+                DevExpress.ui.notify("Getting Entities From City Name", "success", 2000);
+            }
+        }
+    })
+
+    $("#searchAuthorButton").dxButton({
+        text: "Search By Author Name",
+        type: "success",
+        onClick: function (data) {
+
+            var _dbType = chooseDbDropDown.option("value");
+            var _author = authorText.option("value");
+
+            if (_author == "") {
+                DevExpress.ui.notify("City Name Is Required", "error", 2000);
+            }
+            else if (_dbType == null) {
+                DevExpress.ui.notify("Database type has to be chosen", "error", 2000);
+            }
+            else {
+                LoadBooksFromAuthor();
+                DevExpress.ui.notify("Getting Entities From Author", "success", 2000);
+            }
+        }
+    })
+
+    $("#searchBookTitleButton").dxButton({
+        text: "Search By Book Title",
+        type: "success",
+        onClick: function (data) {
+
+            var _dbType = chooseDbDropDown.option("value");
+            var _bookTitle = bookTitleText.option("value");
+
+            if (_bookTitle == "") {
+                DevExpress.ui.notify("Book Title Is Required", "error", 2000);
+            }
+            else if (_dbType == null) {
+                DevExpress.ui.notify("Database type has to be chosen", "error", 2000);
+            }
+            else {
+                LoadGeolocationsFromBookTitle();
+                DevExpress.ui.notify("Getting Map Positions From Book Title", "success", 2000);
+            }
+        }
+    })
+
+    $("#searchGeoLocationButton").dxButton({
+        text: "Search By Geolocation",
+        type: "success",
+        onClick: function (data) {
+
+            var _lon = lonGeoLocText.option("value");
+            var _lat = latGeoLocText.option("value");
+
+            GetMarkersFromGeolocation(_lon, _lat);
+            DevExpress.ui.notify("Getting Geolocations...", "success", 2000);
+
+        }
+    })
+
+    var cityNameText = $("#cityNameText").dxTextBox({
+        placeholder: "Enter City Name"
+    }).dxTextBox("instance");
+
+    var authorText = $("#authorText").dxTextBox({
+        placeholder: "Enter Author Name"
+    }).dxTextBox("instance");
+
+    var bookTitleText = $("#bookTitleText").dxTextBox({
+        placeholder: "Enter Book Title Name"
+    }).dxTextBox("instance");
+
+    var lonGeoLocText = $("#lonGeoLocText").dxNumberBox({
+        placeholder: "Enter Longitude"
+    }).dxNumberBox("instance");
+
+    var latGeoLocText = $("#latGeoLocText").dxNumberBox({
+        placeholder: "Enter Latitude"
+    }).dxNumberBox("instance");
+
+    var LoadBooksFromCity = function () {
+
+        var _dbType = chooseDbDropDown.option("value");
+        var _city = cityNameText.option("value");
+
+        $.get("/DatabaseApi/LoadBooksFromCity", { cityName: _city, dbType: _dbType })
+        .done(function (data) {
+            dataGrid.dxDataGrid("instance").option("dataSource", data)
+        })
+    }
+
+    var LoadBooksFromAuthor = function () {
+
+        var _dbType = chooseDbDropDown.option("value");
+        var _author = authorText.option("value");
+
+        $.get("/DatabaseApi/LoadBooksFromAuthor", { author: _author, dbType: _dbType })
+        .done(function (data) {
+
+            dataGrid.dxDataGrid("instance").option("dataSource", data.bookList)
+
+            var markersData = [];
+
+            for (var i = 0; i < data.cityList.length; i++) {
+                markersData.push({ location: [data.cityList[i].latitude, data.cityList[i].longitude] });
+            }
+
+            mapWidget.option("markers", markersData);
+        })
+    }
+
+    var GetMarkersFromGeolocation = function (lonz, latz) {
+
+        var _dbType = chooseDbDropDown.option("value");
+
+        $.get("/DatabaseApi/LoadGeoMarkersFromGeolocations", { lon: lonz, lat: latz, dbType: _dbType })
+        .done(function (data) {
+
+            dataGrid.dxDataGrid("instance").option("dataSource", data.bookList)
+
+            var markersData = [];
+
+            for (var i = 0; i < data.cityList.length; i++) {
+                markersData.push({location: [data.cityList[i].latitude, data.cityList[i].longitude] });
+            }
+
+            mapWidget.option("markers", markersData);
+        })
+
+    }
+
+    var LoadGeolocationsFromBookTitle = function () {
+        var _dbType = chooseDbDropDown.option("value");
+        var _bookTitle = bookTitleText.option("value");
+
+        $.get("/DatabaseApi/LoadGeolocationsFromBookTitle", { bookTitle: _bookTitle, dbType: _dbType })
+        .done(function (data) {
+
+            dataGrid.dxDataGrid("instance").option("dataSource", null)
+
+            var markersData = [];
+
+            for (var i = 0; i < data.length; i++) {
+                markersData.push({ location: [data[i].latitude, data[i].longitude] });
+            }
+
+            mapWidget.option("markers", markersData);
+        })
+
+    }
+
+
+    GetDbTypes();
+
+    function GetDbTypes() {
+        $.get("/DatabaseApi/GetAllDbTypes", {})
+        .done(function (data) {
+
+            chooseDbDropDown.option("items", data);
+
+            chooseDbDropDown.option("value", 3);
+        })
+    }
+</script>

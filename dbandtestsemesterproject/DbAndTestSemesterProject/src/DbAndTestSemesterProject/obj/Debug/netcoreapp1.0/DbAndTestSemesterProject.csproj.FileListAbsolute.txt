@@ -1,0 +1,12 @@
+C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\bin\Debug\netcoreapp1.0\DbAndTestSemesterProject.deps.json
+C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\bin\Debug\netcoreapp1.0\DbAndTestSemesterProject.runtimeconfig.json
+C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\bin\Debug\netcoreapp1.0\DbAndTestSemesterProject.runtimeconfig.dev.json
+C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\bin\Debug\netcoreapp1.0\DbAndTestSemesterProject.dll
+C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\bin\Debug\netcoreapp1.0\DbAndTestSemesterProject.pdb
+C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\bin\Debug\netcoreapp1.0\BackEnd.dll
+C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\bin\Debug\netcoreapp1.0\BackEnd.pdb
+C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\obj\Debug\netcoreapp1.0\DbAndTestSemesterProject.csprojResolveAssemblyReference.cache
+C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\obj\Debug\netcoreapp1.0\UserSecretsAssemblyInfo.cs
+C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\obj\Debug\netcoreapp1.0\DbAndTestSemesterProject.AssemblyInfo.cs
+C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\obj\Debug\netcoreapp1.0\DbAndTestSemesterProject.dll
+C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\obj\Debug\netcoreapp1.0\DbAndTestSemesterProject.pdb

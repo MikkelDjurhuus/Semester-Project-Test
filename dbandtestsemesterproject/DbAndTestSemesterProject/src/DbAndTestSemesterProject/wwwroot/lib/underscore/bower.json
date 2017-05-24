@@ -1,0 +1,7 @@
+{
+  "name": "underscore",
+  "version": "1.8.3",
+  "main": "underscore.js",
+  "keywords": ["util", "functional", "server", "client", "browser"],
+  "ignore" : ["docs", "Buddy And Brighteyes Pigg", "*.yml", "CNAME", "index.html", "favicon.ico", "CONTRIBUTING.md", ".*", "component.json", "package.json", "karma.*"]
+}

@@ -1,0 +1,78 @@
+DOCUMENT
+GetAuthorQueryList
+total: 1575
+median: 12
+avg: 78
+
+DOCUMENT
+GetBooksFromCityName
+total: 1130
+median: 50
+avg: 56
+
+DOCUMENT
+GetGeolocationsFromBookTitle
+total: 231
+median: 11
+avg: 11
+
+DOCUMENT
+GetGetolocationMarkers
+total: 5555
+median: 0
+avg: 277
+
+
+
+GRAPH
+GetAuthorQueryList
+total: 637
+median: 17
+avg: 31
+
+GRAPH
+GetBooksFromCityName
+total: 757
+median: 35
+avg: 37
+
+GRAPH
+GetGeolocationsFromBookTitle
+total: 394
+median: 19
+avg: 19
+
+GRAPH
+GetGetolocationMarkers
+total: 7091
+median: 354
+avg: 354
+
+
+
+SQL
+GetAuthorQueryList
+total: 3991
+median: 183
+avg: 199
+
+SQL
+GetBooksFromCityName
+total: 7073
+median: 343
+avg: 353
+
+SQL
+GetGeolocationsFromBookTitle
+total: 3678
+median: 182
+avg: 183
+
+SQL
+GetGetolocationMarkers
+total: 10674
+median: 529
+avg: 533
+
+
+DONE!

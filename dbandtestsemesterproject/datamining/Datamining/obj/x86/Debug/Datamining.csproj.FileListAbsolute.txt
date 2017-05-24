@@ -1,0 +1,16 @@
+C:\Users\Theko\OneDrive\Dokumenter\GitHub\datamining\Datamining\bin\x86\Debug\Datamining.exe.config
+C:\Users\Theko\OneDrive\Dokumenter\GitHub\datamining\Datamining\bin\x86\Debug\nunit.engine.dll
+C:\Users\Theko\OneDrive\Dokumenter\GitHub\datamining\Datamining\bin\x86\Debug\nunit.engine.api.dll
+C:\Users\Theko\OneDrive\Dokumenter\GitHub\datamining\Datamining\bin\x86\Debug\Mono.Cecil.dll
+C:\Users\Theko\OneDrive\Dokumenter\GitHub\datamining\Datamining\bin\x86\Debug\NUnit3.TestAdapter.dll
+C:\Users\Theko\OneDrive\Dokumenter\GitHub\datamining\Datamining\bin\x86\Debug\Mono.Cecil.Pdb.dll
+C:\Users\Theko\OneDrive\Dokumenter\GitHub\datamining\Datamining\bin\x86\Debug\Mono.Cecil.Mdb.dll
+C:\Users\Theko\OneDrive\Dokumenter\GitHub\datamining\Datamining\bin\x86\Debug\Mono.Cecil.Rocks.dll
+C:\Users\Theko\OneDrive\Dokumenter\GitHub\datamining\Datamining\bin\x86\Debug\Datamining.exe
+C:\Users\Theko\OneDrive\Dokumenter\GitHub\datamining\Datamining\bin\x86\Debug\Datamining.pdb
+C:\Users\Theko\OneDrive\Dokumenter\GitHub\datamining\Datamining\bin\x86\Debug\nunit-agent-x86.exe
+C:\Users\Theko\OneDrive\Dokumenter\GitHub\datamining\Datamining\bin\x86\Debug\nunit-agent.exe
+C:\Users\Theko\OneDrive\Dokumenter\GitHub\datamining\Datamining\bin\x86\Debug\nunit.framework.dll
+C:\Users\Theko\OneDrive\Dokumenter\GitHub\datamining\Datamining\bin\x86\Debug\nunit.framework.xml
+C:\Users\Theko\OneDrive\Dokumenter\GitHub\datamining\Datamining\obj\x86\Debug\Datamining.exe
+C:\Users\Theko\OneDrive\Dokumenter\GitHub\datamining\Datamining\obj\x86\Debug\Datamining.pdb
