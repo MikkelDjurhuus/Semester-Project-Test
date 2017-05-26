@@ -80,7 +80,7 @@ namespace BackEndTest
 
             var _res = false;
 
-            if (_data.CityList.Count == 100)
+            if (_data.CityList.Count > 0)
             {
                 _res = true;
             }

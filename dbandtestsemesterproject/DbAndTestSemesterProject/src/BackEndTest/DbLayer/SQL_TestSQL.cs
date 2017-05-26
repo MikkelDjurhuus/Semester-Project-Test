@@ -10,6 +10,46 @@ namespace BackEndTest
     public class SQL_TestSQL
     {
         [Fact]
+        public void ResetDatabase()
+        {
+            SQL sql = new SQL();
+            Assert.True(sql.ResetDatabase());
+        }
+
+        [Fact]
+        public void InsertBook()
+        {
+            SQL sql = new SQL();
+            Assert.True(sql.InsertBook("Coolness", "Mikkel Djurhuus") > 0);
+            sql.ResetDatabase();
+        }
+        [Fact]
+        public void InsertCity()
+        {
+            SQL sql = new SQL();
+            Assert.True(sql.InsertCity("My City", new MySql.Data.Types.MySqlGeometry(10.342, 32.234)) > 0);
+            sql.ResetDatabase();
+        }
+        public void DeleteBook()
+        {
+            SQL sql = new SQL();
+            Assert.True(sql.Delete("book", "id = 1") > 0);
+            sql.ResetDatabase();
+        }
+        public void DeleteCity()
+        {
+            SQL sql = new SQL();
+            Assert.True(sql.Delete("city", "id = 1") > 0);
+            sql.ResetDatabase();
+        }
+        public void Update()
+        {
+            SQL sql = new SQL();
+            Assert.True(sql.Update("book", "title = 'New title'", "id = 2") > 0);
+            sql.ResetDatabase();
+        }
+
+        [Fact]
         public async void TestGetBooksFromCityName()
         {
             var _sql = new SQL();

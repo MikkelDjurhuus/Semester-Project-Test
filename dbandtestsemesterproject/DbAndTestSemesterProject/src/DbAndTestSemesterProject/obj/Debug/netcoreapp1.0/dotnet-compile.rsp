@@ -1,5 +1,5 @@
---temp-output:C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\obj\Debug\netcoreapp1.0\
---out:C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\bin\Debug\netcoreapp1.0\DbAndTestSemesterProject.dll
+--temp-output:C:\Users\Theko\Desktop\DBHandin\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\obj\Debug\netcoreapp1.0\
+--out:C:\Users\Theko\Desktop\DBHandin\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\bin\Debug\netcoreapp1.0\DbAndTestSemesterProject.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -239,9 +239,9 @@
 --reference:C:\Users\Theko\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Theko\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
 --reference:C:\Users\Theko\.nuget\packages\WindowsAzure.Storage\7.2.1\lib\netstandard1.3\Microsoft.WindowsAzure.Storage.dll
---reference:C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\BackEnd\bin\Debug\netstandard1.6\BackEnd.dll
---resource:"C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\obj\Debug\netcoreapp1.0\DbAndTestSemesterProjectdotnet-compile.deps.json",DbAndTestSemesterProject.deps.json
-C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\Program.cs
-C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\Startup.cs
-C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\Controllers\HomeController.cs
-C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\Controllers\ApiController\DatabaseApiController.cs
+--reference:C:\Users\Theko\Desktop\DBHandin\dbandtestsemesterproject\DbAndTestSemesterProject\src\BackEnd\bin\Debug\netstandard1.6\BackEnd.dll
+--resource:"C:\Users\Theko\Desktop\DBHandin\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\obj\Debug\netcoreapp1.0\DbAndTestSemesterProjectdotnet-compile.deps.json",DbAndTestSemesterProject.deps.json
+C:\Users\Theko\Desktop\DBHandin\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\Program.cs
+C:\Users\Theko\Desktop\DBHandin\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\Startup.cs
+C:\Users\Theko\Desktop\DBHandin\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\Controllers\HomeController.cs
+C:\Users\Theko\Desktop\DBHandin\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\Controllers\ApiController\DatabaseApiController.cs

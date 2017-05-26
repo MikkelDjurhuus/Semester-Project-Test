@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.GeoJsonObjectModel;
+using System.Diagnostics;
 
 namespace BackEnd
 {
@@ -25,6 +26,112 @@ namespace BackEnd
             return database;
         }
 
+        public bool ResetDatabase()
+        {
+            try
+            {
+                Delete("Book");
+                Delete("City");
+                LoadFile(@"..\..\datamining\MongoLoadCities.bat");
+                LoadFile(@"..\..\datamining\MongoLoadBooks.bat");
+                return true;
+            }
+            catch (Exception e)
+            {
+
+                throw;
+            }
+        }
+
+        public bool LoadFile(string path)
+        {
+            try
+            {
+                Process proc = new Process
+                {
+                    StartInfo = new ProcessStartInfo
+                    {
+                        FileName = path,
+                        UseShellExecute = true,
+                        CreateNoWindow = false,
+                    }
+                };
+                proc.Start();
+                proc.WaitForExit();
+                return true;
+            }
+            catch (Exception e)
+            {
+
+                throw;
+            }
+        }
+        public bool Delete(string type)
+        {
+            IMongoDatabase database = GetConnection();
+            //get mongodb collection
+            var collection = database.GetCollection<BsonDocument>(type);
+            try
+            {
+                collection.DeleteMany(new BsonDocument { });
+                return true;
+            }
+            catch (Exception e)
+            {
+
+                throw;
+            }
+        }
+
+        public bool Insert(string col, BsonDocument document)
+        {
+            IMongoDatabase database = GetConnection();
+            //get mongodb collection
+            var collection = database.GetCollection<BsonDocument>(col);
+            try
+            {
+                collection.InsertOne(document);
+                return true;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public bool Update(string col, BsonDocument document, BsonDocument update)
+        {
+            IMongoDatabase database = GetConnection();
+            //get mongodb collection
+            var collection = database.GetCollection<BsonDocument>(col);
+            try
+            {
+                collection.UpdateOne(document, update);
+                return true;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public bool Remove(string col, BsonDocument document)
+        {
+            IMongoDatabase database = GetConnection();
+            //get mongodb collection
+            var collection = database.GetCollection<BsonDocument>(col);
+            try
+            {
+                collection.DeleteOne(document);
+                return true;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public async Task<List<object>> GetBooksFromCityName(string cityName)
         {
             IMongoDatabase database = GetConnection();
@@ -36,7 +143,7 @@ namespace BackEnd
                 var nameFilter = Builders<BsonDocument>.Filter.Eq("name", cityName);
                 var result = cities.Find(nameFilter).FirstOrDefault();
                 var objID = result[0].AsObjectId;
-                var match = Builders<BsonDocument>.Filter.AnyEq("cities",objID);
+                var match = Builders<BsonDocument>.Filter.AnyEq("cities", objID);
                 var result1 = books.Find(match).ToList();
                 foreach (var item in result1)
                 {
@@ -196,6 +303,14 @@ namespace BackEnd
             {
                 throw;
             }
+        }
+
+        public List<BsonDocument> FindDocument(string col, BsonDocument filter)
+        {
+            IMongoDatabase database = GetConnection();
+            var collection = database.GetCollection<BsonDocument>(col);
+            var result = collection.Find(filter).ToList();
+            return result;
         }
     }
 }

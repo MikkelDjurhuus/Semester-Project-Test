@@ -3,6 +3,7 @@ using BackEnd.ReturnEntities;
 using Neo4j.Driver.V1;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,12 +12,13 @@ namespace BackEnd
     public class Graph
     {
         ISession conn;
+        IDriver driver;
 
         public ISession GetConnection()
         {
             if (conn == null)
             {
-                var driver = GraphDatabase.Driver("bolt://localhost:7687", AuthTokens.Basic("neo4j", "root"));
+                driver = GraphDatabase.Driver("bolt://localhost:7687", AuthTokens.Basic("neo4j", "root"));
                 conn = driver.Session();
             }
             try
@@ -28,6 +30,52 @@ namespace BackEnd
                 throw e;
             }
         }
+
+        public bool ResetDatabase()
+        {
+            try
+            {
+                RunStatement("MATCH (n) OPTIONAL MATCH (n)-[r]-() DELETE n,r;");
+                RunStatement("LOAD CSV WITH HEADERS FROM 'file:///books-nocities.csv' AS row MERGE(:Book { id: toInteger(row.id), title: row.title, author: row.author});");
+                RunStatement("LOAD CSV WITH HEADERS FROM 'file:///cities15000.csv' AS row MERGE(:City { id: toInteger(row.id), name: row.name, latitude: row.latitude, longitude: row.longitude});");
+                RunStatement("LOAD CSV WITH HEADERS FROM 'file:///mentioned.csv' AS row Match(b: Book { id: toInteger(row.book_id)}) Match(c: City { id: toInteger(row.city_id)}) Merge(b) -[r: mentions]->(c) ON CREATE SET r.count = 1 ON MATCH SET r.count = r.count + 1 return count(r)");
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public IStatementResult RunStatement(string statement)
+        {
+            var session = GetConnection();
+            try
+            {
+                var result = session.Run(statement, new Dictionary<string, object>());
+                result.Consume();
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+        }
+        public IStatementResult RunStatement(string statement, Dictionary<string,object> properties)
+        {
+            var session = GetConnection();
+            try
+            {
+                var result = session.Run(statement, properties);
+                result.Consume();
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+        }
+
         public async Task<List<object>> GetBooksFromCityName(string cityName)
         {
             List<object> _returnData = new List<object>();

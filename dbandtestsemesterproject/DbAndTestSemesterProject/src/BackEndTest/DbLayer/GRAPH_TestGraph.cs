@@ -1,4 +1,5 @@
 ﻿using BackEnd;
+using Neo4j.Driver.V1;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,23 @@ namespace BackEndTest
 {
     public class GRAPH_TestGraph
     {
+
+        [Fact]
+        public void Merge()
+        {
+            Graph graph = new Graph();
+            Assert.True(graph.RunStatement("merge (b:Book {id: 999999}) return b").ToList().Count > 0);
+            ResetDatabase();
+        }
+
+        [Fact]
+        public void Delete()
+        {
+            Graph graph = new Graph();
+            Assert.True(graph.RunStatement("match (b: Book {id: 10}) delete b, count(b)").ToList().Count > 0);
+            ResetDatabase();
+        }
+
         [Fact]
         public async void TestGetBooksFromCityName()
         {
@@ -67,6 +85,12 @@ namespace BackEndTest
             var _res = await _graph.GetGetolocationMarkers(10, 45);
 
             Assert.True(_res.CityList.Count != 0);
+        }
+        [Fact]
+        public void ResetDatabase()
+        {
+            Graph graph = new Graph();
+            Assert.True(graph.ResetDatabase());
         }
     }
 }

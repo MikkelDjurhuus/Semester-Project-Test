@@ -1,4 +1,5 @@
 ﻿using BackEnd;
+using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,38 @@ namespace BackEndTest
 {
     public class DOC_TestDocument
     {
+        [Fact]
+        public void Insert()
+        {
+            Document db = new Document();
+            Assert.True(db.Insert("Book", new BsonDocument { { "id", "999999" }, { "title", "something cool" }, { "author", "Mikkel Djurhuus" }}));
+            Assert.True(db.FindDocument("Book", new BsonDocument { { "id", "999999" }, { "title", "something cool" }, { "author", "Mikkel Djurhuus" } }).Count > 0);
+            db.ResetDatabase();
+        }
+        [Fact]
+        public void Update()
+        {
+            Document db = new Document();
+            Assert.True(db.Update("Book", new BsonDocument { { "id", "1" }}, new BsonDocument { { "title", "WTF SO AWSOME" } }));
+            Assert.True(db.FindDocument("Book", new BsonDocument { { "id", "1" },{ "title", "WTF SO AWSOME" } }).Count > 0);
+            db.ResetDatabase();
+        }
+        [Fact]
+        public void Remove()
+        {
+
+            Document db = new Document();
+            Assert.True(db.Remove("Book", new BsonDocument { { "id", "1" }}));
+            Assert.True(db.FindDocument("Book", new BsonDocument { { "id", "1" } }).Count < 1);
+            db.ResetDatabase();
+        }
+
+        public void ResetDatabase()
+        {
+            Document db = new Document();
+            Assert.True(db.ResetDatabase());
+        }
+
         [Fact]
         public async void TestGetBooksFromCityName()
         {

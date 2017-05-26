@@ -7,8 +7,8 @@
 -debug:full
 -nostdlib
 -nologo
-"C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\obj\Debug\netcoreapp1.0\dotnet-compile.assemblyinfo.cs"
--out:"C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\bin\Debug\netcoreapp1.0\DbAndTestSemesterProject.dll"
+"C:\Users\Theko\Desktop\DBHandin\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\obj\Debug\netcoreapp1.0\dotnet-compile.assemblyinfo.cs"
+-out:"C:\Users\Theko\Desktop\DBHandin\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\bin\Debug\netcoreapp1.0\DbAndTestSemesterProject.dll"
 -r:"C:\Users\Theko\.nuget\packages\DevExtreme.AspNet.Data\1.1.0\lib\netstandard1.0\DevExtreme.AspNet.Data.dll"
 -r:"C:\Users\Theko\.nuget\packages\DevExtreme.AspNet.Mvc\16.1.5-pre-1608021755\lib\netstandard1.6\DevExtreme.AspNet.Mvc.dll"
 -r:"C:\Users\Theko\.nuget\packages\Google.Protobuf\3.0.0\lib\netstandard1.0\Google.Protobuf.dll"
@@ -235,9 +235,9 @@
 -r:"C:\Users\Theko\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll"
 -r:"C:\Users\Theko\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll"
 -r:"C:\Users\Theko\.nuget\packages\WindowsAzure.Storage\7.2.1\lib\netstandard1.3\Microsoft.WindowsAzure.Storage.dll"
--r:"C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\BackEnd\bin\Debug\netstandard1.6\BackEnd.dll"
--resource:"C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\obj\Debug\netcoreapp1.0\DbAndTestSemesterProjectdotnet-compile.deps.json",DbAndTestSemesterProject.deps.json
-"C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\Program.cs"
-"C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\Startup.cs"
-"C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\Controllers\HomeController.cs"
-"C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\Controllers\ApiController\DatabaseApiController.cs"
+-r:"C:\Users\Theko\Desktop\DBHandin\dbandtestsemesterproject\DbAndTestSemesterProject\src\BackEnd\bin\Debug\netstandard1.6\BackEnd.dll"
+-resource:"C:\Users\Theko\Desktop\DBHandin\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\obj\Debug\netcoreapp1.0\DbAndTestSemesterProjectdotnet-compile.deps.json",DbAndTestSemesterProject.deps.json
+"C:\Users\Theko\Desktop\DBHandin\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\Program.cs"
+"C:\Users\Theko\Desktop\DBHandin\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\Startup.cs"
+"C:\Users\Theko\Desktop\DBHandin\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\Controllers\HomeController.cs"
+"C:\Users\Theko\Desktop\DBHandin\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\Controllers\ApiController\DatabaseApiController.cs"

@@ -1,5 +1,5 @@
---temp-output:C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\ControllerTest\obj\Debug\netcoreapp1.0\
---out:C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\ControllerTest\bin\Debug\netcoreapp1.0\ControllerTest.dll
+--temp-output:C:\Users\Theko\Desktop\DBHandin\dbandtestsemesterproject\DbAndTestSemesterProject\src\ControllerTest\obj\Debug\netcoreapp1.0\
+--out:C:\Users\Theko\Desktop\DBHandin\dbandtestsemesterproject\DbAndTestSemesterProject\src\ControllerTest\bin\Debug\netcoreapp1.0\ControllerTest.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -237,10 +237,10 @@
 --reference:C:\Users\Theko\.nuget\packages\xunit.extensibility.execution\2.1.0\lib\dotnet\xunit.execution.dotnet.dll
 --reference:C:\Users\Theko\.nuget\packages\xunit.runner.reporters\2.1.0\lib\dotnet\xunit.runner.reporters.dotnet.dll
 --reference:C:\Users\Theko\.nuget\packages\xunit.runner.utility\2.1.0\lib\dotnet\xunit.runner.utility.dotnet.dll
---reference:C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\BackEnd\bin\Debug\netstandard1.6\BackEnd.dll
---reference:C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\bin\Debug\netcoreapp1.0\DbAndTestSemesterProject.dll
-C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\ControllerTest\DOC_TestController.cs
-C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\ControllerTest\Generic_TestController.cs
-C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\ControllerTest\GRAPH_TestController.cs
-C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\ControllerTest\Mock_TestController.cs
-C:\Users\Theko\OneDrive\Dokumenter\dbandtestsemesterproject\DbAndTestSemesterProject\src\ControllerTest\SQL_TestController.cs
+--reference:C:\Users\Theko\Desktop\DBHandin\dbandtestsemesterproject\DbAndTestSemesterProject\src\BackEnd\bin\Debug\netstandard1.6\BackEnd.dll
+--reference:C:\Users\Theko\Desktop\DBHandin\dbandtestsemesterproject\DbAndTestSemesterProject\src\DbAndTestSemesterProject\bin\Debug\netcoreapp1.0\DbAndTestSemesterProject.dll
+C:\Users\Theko\Desktop\DBHandin\dbandtestsemesterproject\DbAndTestSemesterProject\src\ControllerTest\DOC_TestController.cs
+C:\Users\Theko\Desktop\DBHandin\dbandtestsemesterproject\DbAndTestSemesterProject\src\ControllerTest\Generic_TestController.cs
+C:\Users\Theko\Desktop\DBHandin\dbandtestsemesterproject\DbAndTestSemesterProject\src\ControllerTest\GRAPH_TestController.cs
+C:\Users\Theko\Desktop\DBHandin\dbandtestsemesterproject\DbAndTestSemesterProject\src\ControllerTest\Mock_TestController.cs
+C:\Users\Theko\Desktop\DBHandin\dbandtestsemesterproject\DbAndTestSemesterProject\src\ControllerTest\SQL_TestController.cs

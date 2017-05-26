@@ -1,0 +1,1 @@
+mongo localhost:27017/Guttenberg .\City_Location.js
